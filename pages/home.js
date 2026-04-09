@@ -1,0 +1,3 @@
+exports HomePage = class HomePage{
+
+}
