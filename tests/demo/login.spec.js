@@ -13,4 +13,12 @@ test('test', async ({ page }) => {
   // await page.getByRole('textbox', { name: 'Password' }).fill('SuperSecretPassword!');
   // await page.getByRole('button', { name: ' Login' }).click();
   await page.pause();
+  await page.goto('https://demo.applitools.com/')
+  await page.getByRole('textbox', { name: 'Enter your username' }).click();
+  await page.getByRole('textbox', { name: 'Enter your username' }).fill('admin');
+  await page.getByRole('textbox', { name: 'Enter your password' }).click();
+  await page.getByRole('textbox', { name: 'Enter your password' }).fill('admin123');
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.pause();
+
 });
