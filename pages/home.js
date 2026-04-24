@@ -7,6 +7,6 @@ exports.HomePage = class HomePage{
     this.Checkboxes = page.getByLabel('Checkboxes')
   }
   async gotoHomePage(){
-    await this.page.goto('https://the-internet.herokuapp.com')
+    await this.page.goto("https://the-internet.herokuapp.com/");
   }  
 }
