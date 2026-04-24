@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { playwright_dev_pages } from '../../pages/playwright_dev_pages';
+import { PlaywrightDevPage } from '../../pages/playwright_dev_pages'
 
 test('getting started should contain table of contents', async ({ page }) => {
-  const playwrightDev = new playwright_dev_pages(page)
-  await playwrightDev.goto();
-  await playwrightDev.getStarted();
+  const playwrightDev = new PlaywrightDevPage(page)
+  playwrightDev.gotoHomePage();
+  playwrightDev.getStarted();
   await expect(playwrightDev.tocList).toHaveText([
     `How to install Playwright`,
     `What's installed`,
@@ -21,8 +21,9 @@ test('getting started should contain table of contents', async ({ page }) => {
 });
 
 test('should show Page Object Model article', async ({ page }) => {
-  const playwrightDev = new playwright_dev_pages(page)
-  await playwrightDev.goto();
+  const playwrightDev = new PlaywrightDevPage(page)
+
+  await playwrightDev.gotoHomePage();
   await playwrightDev.pageObjectModel();
   await expect(page.locator('article')).toContainText('Page Object Model is a common pattern');
 });

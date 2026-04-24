@@ -1,5 +1,3 @@
-import { expect, locator, page} from '@playwright/test'
-
 export class PlaywrightDevPage{
 
     constructor(page){
@@ -15,7 +13,7 @@ export class PlaywrightDevPage{
 
     }
 
-    async goto() {
+    async gotoHomePage() {
         await this.page.goto('https://playwright.dev');
     }
 
