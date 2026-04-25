@@ -15,14 +15,14 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests/demo',
   /* Maxium time one test can run for. */
-  timeout: 30 * 1000,
-  expect: {
-    /**
-     * Maxium time expect() should wait for the condition to be met.
-     * For example in 'await expect(locatior).toHaveText();`
-     */
-    timeout: 5000
-  },
+  // timeout: 30 * 1000,
+  // expect: {
+  //   /**
+  //    * Maxium time expect() should wait for the condition to be met.
+  //    * For example in 'await expect(locatior).toHaveText();`
+  //    */
+  //   timeout: 5000
+  // },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -40,10 +40,10 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    //     // Sets a 30-second limit for all navigation actions
-    // navigationTimeout: 30000,
-    // // Sets a 10-second limit for other actions (click, fill)
-    // actionTimeout: 10000,
+        // Sets a 30-second limit for all navigation actions
+    navigationTimeout: 30000,
+    // Sets a 10-second limit for other actions (click, fill)
+    actionTimeout: 10000,
   },
 
   /* Configure projects for major browsers */
