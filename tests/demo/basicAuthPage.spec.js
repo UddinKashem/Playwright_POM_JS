@@ -2,8 +2,6 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../../pages/home';
 import BasicAuthPage  from '../../pages/basicAuthPage';
 
-import AddRemoveElementsPage from '../../pages/AddRemoveElementsPage';
-
 test('validate basic auth page', async ({ page }) => {
 
     const homePage = new HomePage(page);
@@ -14,6 +12,7 @@ test('validate basic auth page', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Available Examples' })).toBeVisible();
     await expect(homePage.lnk_Basic_Auth).toBeEnabled();
     await homePage.lnk_Basic_Auth.click();
+    await expect(page).toHaveURL('https://the-internet.herokuapp.com/basic_auth');
 
     await page.pause();
 
