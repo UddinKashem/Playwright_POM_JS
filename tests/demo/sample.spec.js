@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
 
 
-test.only('Test the sample test', async ({ page }) => {
+test('Test the sample test', async ({ page }) => {
 
     await page.goto("https://the-internet.herokuapp.com/");
    
@@ -28,8 +28,7 @@ test.only('Test the sample test', async ({ page }) => {
    await expect(page.getByRole('button', { name: 'Delete' })).toBeVisible();
    await page.getByRole('button', { name: 'Delete' }).click();
    await expect(page.getByRole('button', { name: 'Delete' })).toBeHidden();
-   //getByRole('button', { name: 'Delete' })
-   //getByRole('button', { name: 'Delete' }).first()
+   //getByRole('listitem').filter({ hasText: 'Broken Images' })
    //getByRole('link', { name: 'Basic Auth' })
     await page.pause();
 });
