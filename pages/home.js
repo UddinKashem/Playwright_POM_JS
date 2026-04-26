@@ -5,7 +5,7 @@ exports.HomePage = class HomePage {
 
     this.page = page;
     this.lnk_A_B_Testing = page.getByRole('link', { name: 'A/B Testing' }); // Best practice: use getByRole for links
-    this.lnk_Add_Remove_Elements = page.getByRole('link', { name: 'A/B Testing' });
+    this.lnk_Add_Remove_Elements = page.getByRole('link', { name: 'Add/Remove Elements' });
     this.lnk_Basic_Auth = page.getByRole('link', { name: 'Basic Auth' });
     this.lnk_Broken_Images = page.getByRole('link', { name: 'Broken Images' });
     this.lnk_Challenging_DOM = page.getByRole('link', { name: 'Challenging DOM' });

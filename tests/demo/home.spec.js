@@ -48,5 +48,5 @@ test('test home page', async ({ page }) => {
   await expect(homePage.lnk_Typos).toBeEnabled();
   await expect(homePage.lnk_WYSIWYG_Editor).toBeEnabled();
 
-  await page.pause();
+  //await page.pause();
 });
