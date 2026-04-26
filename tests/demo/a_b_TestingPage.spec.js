@@ -14,6 +14,8 @@ test('Validate A/B Testing Page', async ({ page }) => {
     await expect(homePage.lnk_A_B_Testing).toBeEnabled();
     await homePage.lnk_A_B_Testing.click();
     await expect(page).toHaveURL('https://the-internet.herokuapp.com/abtest');
+    //await expect(a_B_TestingPage.h3_A_B_Test).toBeVisible();
+    await expect(page.getByText('A/B Test')).toBeVisible();
     await page.pause();
 
 })
