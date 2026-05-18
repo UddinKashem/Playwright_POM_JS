@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 
 exports.HomePage = class HomePage {
 
@@ -49,15 +50,16 @@ exports.HomePage = class HomePage {
   async gotoHomePage() {
     // Adding waitUntil: 'domcontentloaded' can sometimes stabilize flaky environments//, { waitUntil: 'domcontentloaded' }
     await this.page.goto("https://the-internet.herokuapp.com/");
+    await this.page.waitForURL("https://the-internet.herokuapp.com/");
+  }
+
+  async navToChangengingDOMPage() {
+    await this.page.waitForURL("https://the-internet.herokuapp.com/");
+    await expect(this.lnk_Challenging_DOM).toBeEnabled();
+    await this.lnk_Challenging_DOM.click();
+    await this.page.waitForURL("https://the-internet.herokuapp.com/challenging_dom")
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/challenging_dom');
   }
 }
-
-/*
-import { test, expect } from '@playwright/test';
-
-  await page.getByRole('link', { name: 'Typos' }).click();
-  await page.getByRole('link', { name: 'WYSIWYG Editor' }).click();
-});
-*/
 
 

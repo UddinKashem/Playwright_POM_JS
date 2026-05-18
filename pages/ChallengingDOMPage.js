@@ -1,3 +1,5 @@
+import { expect, page } from "@playwright/test";
+
 class Challenging_DOMPage {
 
     constructor(page) {
@@ -19,12 +21,39 @@ class Challenging_DOMPage {
         this.lnk_Delete = page.getByRole('link', { name: 'delete' });
     }
 
-    async navToEditURL(){
-        await this.lnk_Edit.first().click();
+    async validateChallengingDOM() {
+        await this.page.waitForURL("https://the-internet.herokuapp.com/challenging_dom");
+        await expect(this.hd_ChallengingDOM).toBeInViewport();
+        await expect(this.txt_part).toBeInViewport();
+        await expect(this.page).toHaveTitle(/The Internet/);
+        // await expect(this.lnk_qux).toBeEnabled();
+        // await expect(this.lnk_bar).toBeEnabled();
+        await expect(this.colH_Lorem).toBeVisible();
+        await expect(this.colH_Ipsum).toBeVisible();
+        await expect(this.colH_Dolor).toBeVisible();
+        await expect(this.colH_Sit).toBeVisible();
+        await expect(this.colH_Amet).toBeVisible();
+        await expect(this.colH_Diceret).toBeVisible();
+        await expect(this.colH_Action).toBeVisible();
+        await expect(this.cell_Iuvaret0).toBeVisible();
+        await expect(this.cell_Iuvaret0).toHaveCount[1];
     }
 
-    async navToDeleteURL(){
+    async ValidateNavToEditURL() {
+        await this.page.waitForURL("https://the-internet.herokuapp.com/challenging_dom");
+        await expect(this.lnk_Edit.first()).toBeEnabled();
+        await this.lnk_Edit.first().click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/challenging_dom#edit');
+        await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/challenging_dom#edit');
+    }
+
+    async validateNavToDeleteURL() {
+        await this.page.waitForURL("https://the-internet.herokuapp.com/challenging_dom");
+        await expect(this.lnk_Delete.first()).toBeEnabled();
         await this.lnk_Delete.first().click();
+        await this.page.waitForURL('https://the-internet.herokuapp.com/challenging_dom#delete');
+        await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/challenging_dom#delete');
+
     }
 }
 export default Challenging_DOMPage;
