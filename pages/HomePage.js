@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { ADDRGETNETWORKPARAMS } from 'node:dns';
 
 class HomePage {
 
@@ -67,6 +68,13 @@ class HomePage {
     await this.lnk_Geolocation.click();
     await this.page.waitForURL('https://the-internet.herokuapp.com/geolocation');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/geolocation');
+  }
+
+  async navToHorizontalSliderPage(){
+    await expect(this.lnk_Horizontal_Slider).toBeEnabled();
+    await this.lnk_Horizontal_Slider.click();
+    await this.page.waitForURL('https://the-internet.herokuapp.com/horizontal_slider');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/horizontal_slider');
   }
 
 }
