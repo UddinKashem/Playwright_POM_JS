@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 
-exports.HomePage = class HomePage {
+class HomePage {
 
   constructor(page) {
 
@@ -60,6 +60,15 @@ exports.HomePage = class HomePage {
     await this.page.waitForURL("https://the-internet.herokuapp.com/challenging_dom")
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/challenging_dom');
   }
-}
 
+  async navGeolocationPage(){
+    //await this.page.waitForURL("https://the-internet.herokuapp.com/");
+    await expect(this.lnk_Geolocation).toBeEnabled();
+    await this.lnk_Geolocation.click();
+    await this.page.waitForURL('https://the-internet.herokuapp.com/geolocation');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/geolocation');
+  }
+
+}
+export default HomePage; 
 

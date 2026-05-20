@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../../pages/home';
+import { HomePage } from '../../pages/HomePage';
 import BrokenImagePage from '../../pages/brokenImagePage';
 
 test('Validate Broken Image Page', async ({ page }) => {

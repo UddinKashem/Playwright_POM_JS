@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../../pages/home'; // Example
+import { HomePage } from '../../pages/HomePage'; // Example
 import AddRemoveElementsPage from '../../pages/AddRemoveElementsPage';
 
 test('Validate Add Remove Elements Page', async ({ page }) => {

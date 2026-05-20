@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../../pages/home';
+import { HomePage } from '../../pages/HomePage';
 import BasicAuthPage  from '../../pages/basicAuthPage';
 
 test('validate basic auth page', async ({ page }) => {
