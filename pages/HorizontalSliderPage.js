@@ -17,11 +17,3 @@ class HorizontalSiderPage{
     }
 }
 export default HorizontalSiderPage;
-
-/*
-test('test', async ({ page }) => {
-  await page.getByRole('heading', { name: 'Horizontal Slider' }).click();
-  await page.getByRole('heading', { name: 'Set the focus on the slider (' }).click();
-  await page.getByRole('slider').fill('5');
-});
-*/
