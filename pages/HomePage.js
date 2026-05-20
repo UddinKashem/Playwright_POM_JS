@@ -77,6 +77,13 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/horizontal_slider');
   }
 
+  async navToHoversPage(){
+    await expect(this.lnk_Hovers).toBeEnabled();
+    await this.lnk_Hovers.click({ timeOut: 15000 });
+    await this.page.waitForURL('https://the-internet.herokuapp.com/hovers');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/hovers');
+  }
+
 }
 export default HomePage; 
 
