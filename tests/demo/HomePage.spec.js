@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { HomePage } = require('../../pages/home');
+const { HomePage } = require('../../pages/HomePage');
 
 test('test home page', async ({ page }) => {
   const homePage = new HomePage(page);

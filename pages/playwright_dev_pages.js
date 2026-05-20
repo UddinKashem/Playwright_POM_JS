@@ -1,3 +1,5 @@
+import {expect, page } from '@playwright/test';
+
 export class PlaywrightDevPage{
 
     constructor(page){
