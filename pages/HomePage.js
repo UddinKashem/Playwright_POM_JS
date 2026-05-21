@@ -98,6 +98,13 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/inputs');
   }
 
+  async navToJQueryUI_Menu(){
+    await expect(this.lnk_JQuery_UI_Menus).toBeEnabled();
+    await this.lnk_JQuery_UI_Menus.click({timeout: 15000});
+    await this.page.waitForURL('https://the-internet.herokuapp.com/jqueryui/menu');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/jqueryui/menu');
+  }
+
 }
 export default HomePage; 
 
