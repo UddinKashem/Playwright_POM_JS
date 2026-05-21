@@ -91,6 +91,13 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/infinite_scroll');
   }
 
+  async navToInputsPage(){
+    await expect(this.lnk_Inputs).toBeEnabled();
+    await this.lnk_Inputs.click({timeout: 15000});
+    await this.page.waitForURL('https://the-internet.herokuapp.com/inputs');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/inputs');
+  }
+
 }
 export default HomePage; 
 
