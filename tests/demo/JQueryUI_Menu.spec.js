@@ -31,7 +31,8 @@ test.describe('JQueryUI - Menu Page Validation', () => {
         jQueryUI_MenuPage = new JQueryUI_Menu(page);
 
         await jQueryUI_MenuPage.validateBackToJQUI();
-       // await jQueryUI_MenuPage.page.pause();
+
+        //await jQueryUI_MenuPage.page.pause();
     })
 
 })

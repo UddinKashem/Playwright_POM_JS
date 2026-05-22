@@ -34,6 +34,7 @@ class HomePage {
     this.lnk_Infinite_Scroll = page.getByRole('link', { name: 'Infinite Scroll' });
     this.lnk_Inputs = page.getByRole('link', { name: 'Inputs' });
     this.lnk_JQuery_UI_Menus = page.getByRole('link', { name: 'JQuery UI Menus' });
+    this.lnk_JavaScript_Alerts = page.getByRole('link', { name: 'JavaScript Alerts' });
     this.lnk_Multiple_Windows = page.getByRole('link', { name: 'Multiple Windows' });
     this.lnk_Key_Presses = page.getByRole('link', { name: 'Key Presses' });
     this.lnk_Nested_Frames = page.getByRole('link', { name: 'Nested Frames' });
@@ -103,6 +104,13 @@ class HomePage {
     await this.lnk_JQuery_UI_Menus.click({timeout: 15000});
     await this.page.waitForURL('https://the-internet.herokuapp.com/jqueryui/menu');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/jqueryui/menu');
+  }
+
+  async navToJavaScriptAlerts(){
+    await expect(this.lnk_JavaScript_Alerts).toBeEnabled();
+    await this.lnk_JavaScript_Alerts.click({ timeout: 15000 });
+    await this.page.waitForURL('https://the-internet.herokuapp.com/javascript_alerts');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/javascript_alerts');
   }
 
 }
