@@ -113,6 +113,14 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/javascript_alerts');
   }
 
+  async navToKeyPressesPage(){
+    await expect(this.lnk_Key_Presses).toBeEnabled();
+    await this.lnk_Key_Presses.click({timeout: 15000});
+    await this.page.waitForURL('https://the-internet.herokuapp.com/key_presses');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/key_presses');
+
+  }
+
 }
 export default HomePage; 
 
