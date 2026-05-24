@@ -127,6 +127,12 @@ class HomePage {
     await this.page.waitForURL('https://the-internet.herokuapp.com/large');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/large');
   }
+
+  async navToMultipleWindowsPage(){
+    await expect(this.lnk_Multiple_Windows).toBeEnabled();
+    await this.lnk_Multiple_Windows.click({timeout: 10000});
+    await this.page.waitForURL('https://the-internet.herokuapp.com/windows');
+  }
 }
 export default HomePage;
 
