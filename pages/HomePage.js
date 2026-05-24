@@ -37,6 +37,7 @@ class HomePage {
     this.lnk_JavaScript_Alerts = page.getByRole('link', { name: 'JavaScript Alerts' });
     this.lnk_Multiple_Windows = page.getByRole('link', { name: 'Multiple Windows' });
     this.lnk_Key_Presses = page.getByRole('link', { name: 'Key Presses' });
+    this.lnk_Large_N_Deep_DOM = page.getByRole('link', { name: 'Large & Deep DOM' });
     this.lnk_Nested_Frames = page.getByRole('link', { name: 'Nested Frames' });
     this.lnk_Notification_Messages = page.getByRole('link', { name: 'Notification Messages' });
     this.lnk_Shadow_DOM = page.getByRole('link', { name: 'Shadow DOM' });
@@ -63,7 +64,7 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/challenging_dom');
   }
 
-  async navGeolocationPage(){
+  async navGeolocationPage() {
     //await this.page.waitForURL("https://the-internet.herokuapp.com/");
     await expect(this.lnk_Geolocation).toBeEnabled();
     await this.lnk_Geolocation.click();
@@ -71,56 +72,61 @@ class HomePage {
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/geolocation');
   }
 
-  async navToHorizontalSliderPage(){
+  async navToHorizontalSliderPage() {
     await expect(this.lnk_Horizontal_Slider).toBeEnabled();
     await this.lnk_Horizontal_Slider.click();
     await this.page.waitForURL('https://the-internet.herokuapp.com/horizontal_slider');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/horizontal_slider');
   }
 
-  async navToHoversPage(){
+  async navToHoversPage() {
     await expect(this.lnk_Hovers).toBeEnabled();
     await this.lnk_Hovers.click({ timeOut: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/hovers');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/hovers');
   }
 
-  async navToInfiniteScrollPage(){
+  async navToInfiniteScrollPage() {
     await expect(this.lnk_Infinite_Scroll).toBeEnabled();
-    await this.lnk_Infinite_Scroll.click({timeout: 15000});
+    await this.lnk_Infinite_Scroll.click({ timeout: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/infinite_scroll');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/infinite_scroll');
   }
 
-  async navToInputsPage(){
+  async navToInputsPage() {
     await expect(this.lnk_Inputs).toBeEnabled();
-    await this.lnk_Inputs.click({timeout: 15000});
+    await this.lnk_Inputs.click({ timeout: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/inputs');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/inputs');
   }
 
-  async navToJQueryUI_Menu(){
+  async navToJQueryUI_Menu() {
     await expect(this.lnk_JQuery_UI_Menus).toBeEnabled();
-    await this.lnk_JQuery_UI_Menus.click({timeout: 15000});
+    await this.lnk_JQuery_UI_Menus.click({ timeout: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/jqueryui/menu');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/jqueryui/menu');
   }
 
-  async navToJavaScriptAlerts(){
+  async navToJavaScriptAlerts() {
     await expect(this.lnk_JavaScript_Alerts).toBeEnabled();
     await this.lnk_JavaScript_Alerts.click({ timeout: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/javascript_alerts');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/javascript_alerts');
   }
 
-  async navToKeyPressesPage(){
+  async navToKeyPressesPage() {
     await expect(this.lnk_Key_Presses).toBeEnabled();
-    await this.lnk_Key_Presses.click({timeout: 15000});
+    await this.lnk_Key_Presses.click({ timeout: 15000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/key_presses');
     await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/key_presses');
-
   }
 
+  async navToLargeNDeepDOM() {
+    await expect(this.lnk_Large_N_Deep_DOM).toBeEnabled();
+    await this.lnk_Large_N_Deep_DOM.click({ timeout: 10000 });
+    await this.page.waitForURL('https://the-internet.herokuapp.com/large');
+    await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/large');
+  }
 }
-export default HomePage; 
+export default HomePage;
 
