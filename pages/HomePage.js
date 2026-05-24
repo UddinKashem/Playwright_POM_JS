@@ -133,6 +133,12 @@ class HomePage {
     await this.lnk_Multiple_Windows.click({timeout: 10000});
     await this.page.waitForURL('https://the-internet.herokuapp.com/windows');
   }
+
+  async navToNotificationMessagePage(){
+    await expect(this.lnk_Notification_Messages).toBeEnabled();
+    await this.lnk_Notification_Messages.click({ timeout: 10000 });
+    await this.page.waitForURL('https://the-internet.herokuapp.com/notification_message_rendered');
+  }
 }
 export default HomePage;
 
