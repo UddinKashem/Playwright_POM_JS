@@ -41,6 +41,7 @@ class HomePage {
     this.lnk_Nested_Frames = page.getByRole('link', { name: 'Nested Frames' });
     this.lnk_Notification_Messages = page.getByRole('link', { name: 'Notification Messages' });
     this.lnk_Shadow_DOM = page.getByRole('link', { name: 'Shadow DOM' });
+    this.lnk_Redirect_Link = page.getByRole('link', { name: 'Redirect Link' });
     this.lnk_Shifting_Content = page.getByRole('link', { name: 'Shifting Content' });
     this.lnk_Slow_Resources = page.getByRole('link', { name: 'Slow Resources' });
     this.lnk_Sortable_Data_Tables = page.getByRole('link', { name: 'Sortable Data Tables' });
@@ -138,6 +139,12 @@ class HomePage {
     await expect(this.lnk_Notification_Messages).toBeEnabled();
     await this.lnk_Notification_Messages.click({ timeout: 10000 });
     await this.page.waitForURL('https://the-internet.herokuapp.com/notification_message_rendered');
+  }
+
+  async navRedirectLinkPage(){
+    await expect(this.lnk_Redirect_Link).toBeEnabled();
+    await this.lnk_Redirect_Link.click({timeout: 10000});
+    await this.page.waitForURL('https://the-internet.herokuapp.com/redirector');
   }
 }
 export default HomePage;
