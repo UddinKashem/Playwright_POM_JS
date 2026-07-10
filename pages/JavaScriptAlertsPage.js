@@ -34,18 +34,17 @@ class JavaScriptAlertsPage {
         });
         await this.btn_Alert.click();
         await expect(this.txt_Successful).toBeVisible();
-
     }
 
     async valdidateJSConfirmAction() {
         await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/javascript_alerts');
         await expect(this.hd_JS_ALerts).toBeInViewport();
         await expect(this.btn_Confirm).toBeEnabled();
-        await this.btn_Confirm.click();
         await this.page.once('dialog', dialog => {
             console.log(`Dialog message: ${dialog.message()}`);
             dialog.dismiss().catch(() => { });
         });
+        await this.btn_Confirm.click();
         await expect(this.txt_Cancel).toBeVisible();
 
     }
@@ -54,7 +53,6 @@ class JavaScriptAlertsPage {
         await expect(this.page).toHaveURL('https://the-internet.herokuapp.com/javascript_alerts');
         await expect(this.hd_JS_ALerts).toBeInViewport();
         await expect(this.btn_Prompt).toBeEnabled();
-        await this.btn_Prompt.click();
         await this.page.once('dialog', dialog => {
             console.log(`Dialog message: ${dialog.message()}`);
             // Validate the text message
@@ -63,6 +61,7 @@ class JavaScriptAlertsPage {
 
             dialog.dismiss().catch(() => { });
         });
+        await this.btn_Prompt.click();
         await expect(this.txt_Null).toBeVisible();
 
     }
